@@ -1,7 +1,7 @@
 class ProfessionalExperienceDTO {
-    company: string;
-    skillsCompany: string[];
-    companyTime: number;
+    public company: string;
+    public skillsCompany: string[];
+    public companyTime: number;
 }
 
 export default ProfessionalExperienceDTO

@@ -27,7 +27,7 @@ export class Perfil {
     @OneToMany(() => ProfessionalExperience, (professionalExperience) => professionalExperience.perfil, {cascade: true})
     public professionalExperience: Array<ProfessionalExperience>;
 
-    public toEntityForDTO(): PerfilDTO {
+    public fromEntityToDTO(): PerfilDTO {
         const perfilDTO = new PerfilDTO();
         perfilDTO.name = this.name;
         perfilDTO.name= this.name;
@@ -35,18 +35,18 @@ export class Perfil {
         perfilDTO.email = this.email;
         perfilDTO.age = this.age;
         perfilDTO.academicExperience = this.academicExperience.map((academic) => academic.toEntityForDTO());
- 
+        perfilDTO.ProfessionalExperience = this.professionalExperience.map((professional) => professional.toEntityForDTO());
         return perfilDTO;
       }
     
-    public static fromDTOForEntity(dto: PerfilDTO): Perfil {
+    public static fromDTOToEntity(dto: PerfilDTO): Perfil {
         const perfil = new Perfil();
         perfil.name = dto.name;
         perfil.age = dto.age;
         perfil.city = dto.city;
         perfil.email = dto.email;
         perfil.academicExperience = dto.academicExperience.map((AcademicExperienceDTO) => AcademicExperience.fromDTOForEntity(AcademicExperienceDTO));
-        
+        perfil.professionalExperience = dto.ProfessionalExperience.map((ProfessionalExperienceDTO) => ProfessionalExperience.fromDTOForEntity(ProfessionalExperienceDTO));
         return perfil;
     }
 }

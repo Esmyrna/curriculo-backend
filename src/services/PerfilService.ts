@@ -25,7 +25,7 @@ class PerfilService implements IPerfilService {
     }
 
     public async addPerfil(perfilDTO: PerfilDTO): Promise<Perfil> {
-        const perfil = Perfil.fromDTOForEntity(perfilDTO);
+        const perfil = Perfil.fromDTOToEntity(perfilDTO);
         return await this.perfilRepository.save(perfil);
     }
 
@@ -39,7 +39,7 @@ class PerfilService implements IPerfilService {
             console.log("Esse currículo não existe " + idPerfil)
             return undefined;
         } else {
-            const updatePerfil = Perfil.fromDTOForEntity(perfilDTO);
+            const updatePerfil = Perfil.fromDTOToEntity(perfilDTO);
             updatePerfil.id = id;
 
             return await this.perfilRepository.save(updatePerfil);

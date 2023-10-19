@@ -2,12 +2,12 @@ import AcademicExperienceDTO from "./AcademicExperienceDTO";
 import ProfessionalExperienceDTO from "./ProfessionalExperienceDTO";
 
 class PerfilDTO {
-    name: string;
-    age: number;
-    email: string;
-    city: string;
-    public academicExperience: Array<AcademicExperienceDTO>;
-    public ProfessionalExperience: Array<ProfessionalExperienceDTO>;
+   public name: string;
+   public age: number;
+   public email: string;
+   public  city: string;
+   public academicExperience: Array<AcademicExperienceDTO>;
+   public ProfessionalExperience: Array<ProfessionalExperienceDTO>;
 
 }
 
