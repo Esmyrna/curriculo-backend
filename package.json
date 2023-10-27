@@ -4,25 +4,27 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node dist/server",
-      "build": "tsc -p .",
-      "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/server"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node dist/server",
+        "build": "tsc -p .",
+        "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/server"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "@types/cors": "^2.8.14",
-      "@types/express": "^4.17.18",
-      "@types/node": "^20.8.3",
-      "cors": "^2.8.5",
-      "dotenv": "^16.3.1",
-      "express": "^4.18.2",
-      "pg": "^8.11.3",
-      "reflect-metadata": "^0.1.13",
-      "ts-node-dev": "^2.0.0",
-      "typeorm": "^0.3.17",
-      "typescript": "^5.2.2"
+        "@types/cors": "^2.8.14",
+        "@types/express": "^4.17.18",
+        "@types/node": "^20.8.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "firebase": "^10.5.0",
+        "firebase-admin": "^11.11.0",
+        "pg": "^8.11.3",
+        "reflect-metadata": "^0.1.13",
+        "ts-node-dev": "^2.0.0",
+        "typeorm": "^0.3.17",
+        "typescript": "^5.2.2"
     }
-  }
+}

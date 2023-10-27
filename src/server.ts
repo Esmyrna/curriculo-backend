@@ -3,11 +3,15 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { DataSource } from 'typeorm';
 import PerfilController from './controllers/PerfilController';
+import AuthController from './controllers/AuthController'
 import { Perfil } from './entities/Perfil';
 import { AcademicExperience } from './entities/AcademicExperience';
 import { ProfessionalExperience } from './entities/ProfessionalExperience';
-
+import { initializeApp } from 'firebase/app';
+import { config } from './config';
 dotenv.config();
+
+export const firebase = initializeApp(config)
 
 export const dataSource = new DataSource({
   type: 'postgres',
@@ -24,6 +28,7 @@ dataSource.initialize().then(() => {
   app.use(cors());
   app.use(express.json());
   app.use(new PerfilController().router());
+  app.use(new AuthController().router());
 
   const port = Number(process.env.PORT) || 3000;
 
